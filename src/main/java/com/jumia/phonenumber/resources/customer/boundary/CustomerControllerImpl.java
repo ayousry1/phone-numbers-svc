@@ -2,6 +2,7 @@ package com.jumia.phonenumber.resources.customer.boundary;
 
 import com.jumia.phonenumber.repositories.customer.entity.Customer;
 import com.jumia.phonenumber.resources.customer.control.CustomerServiceImpl;
+import com.jumia.phonenumber.resources.customer.entity.CustomerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class CustomerControllerImpl implements CustomerController{
     }
 
     @Override
-    public List<Customer> getAllCustomers() {
+    public List<CustomerModel> getAllCustomers() {
         return customerServiceImpl.getAllCustomers();
     }
 }

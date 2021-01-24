@@ -1,6 +1,7 @@
 package com.jumia.phonenumber.resources.customer.boundary;
 
 import com.jumia.phonenumber.repositories.customer.entity.Customer;
+import com.jumia.phonenumber.resources.customer.entity.CustomerModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,5 +21,5 @@ public interface CustomerController {
      * @return a list of customers
      */
     @GetMapping("/")
-    List<Customer> getAllCustomers();
+    List<CustomerModel> getAllCustomers();
 }
