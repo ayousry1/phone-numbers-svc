@@ -31,8 +31,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customers;
     }
 
-
-    public CustomerModel getModelFromEntity(Customer customer){
+    @Override
+    public CustomerModel getModelFromEntity(Customer customer) {
         CustomerModel model = new CustomerModel();
         model.setId(customer.getId());
         model.setName(customer.getName());
@@ -41,20 +41,21 @@ public class CustomerServiceImpl implements CustomerService {
         return model;
     }
 
-    public void setCountryAndStatus(CustomerModel model){
-        if(Pattern.matches(Patterns.CAMEROON_COUNTRY_CODE_REGEX, model.getPhone())){
+    @Override
+    public void setCountryAndStatus(CustomerModel model) {
+        if (Pattern.matches(Patterns.CAMEROON_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.CAMEROON.toString());
             model.setStatus(Pattern.matches(Patterns.CAMEROON_NUMBER_REGEX, model.getPhone()));
-        }else if(Pattern.matches(Patterns.ETHIOPIA_COUNTRY_CODE_REGEX, model.getPhone())){
+        } else if (Pattern.matches(Patterns.ETHIOPIA_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.ETHIOPIA.toString());
             model.setStatus(Pattern.matches(Patterns.ETHIOPIA_NUMBER_REGEX, model.getPhone()));
-        } else if(Pattern.matches(Patterns.MOROCCO_COUNTRY_CODE_REGEX, model.getPhone())){
+        } else if (Pattern.matches(Patterns.MOROCCO_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.MOROCCO.toString());
             model.setStatus(Pattern.matches(Patterns.MOROCCO_NUMBER_REGEX, model.getPhone()));
-        }else if(Pattern.matches(Patterns.MOZAMBIQUE_COUNTRY_CODE_REGEX, model.getPhone())){
+        } else if (Pattern.matches(Patterns.MOZAMBIQUE_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.MOZAMBIQUE.toString());
             model.setStatus(Pattern.matches(Patterns.MOZAMBIQUE_NUMBER_REGEX, model.getPhone()));
-        }else if(Pattern.matches(Patterns.UGANDA_COUNTRY_CODE_REGEX, model.getPhone())){
+        } else if (Pattern.matches(Patterns.UGANDA_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.UGANDA.toString());
             model.setStatus(Pattern.matches(Patterns.UGANDA_NUMBER_REGEX, model.getPhone()));
         }

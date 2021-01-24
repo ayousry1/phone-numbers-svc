@@ -11,6 +11,17 @@ public class CustomerModel {
 
     private String Country;
 
+    public CustomerModel() {
+    }
+
+    public CustomerModel(int id, String name, String phone, boolean status, String country) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.status = status;
+        Country = country;
+    }
+
     public int getId() {
         return id;
     }

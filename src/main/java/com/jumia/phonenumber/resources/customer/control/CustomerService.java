@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface CustomerService {
     List<CustomerModel> getAllCustomers();
+
+    CustomerModel getModelFromEntity(Customer customer);
+
+    void setCountryAndStatus(CustomerModel model);
 }
