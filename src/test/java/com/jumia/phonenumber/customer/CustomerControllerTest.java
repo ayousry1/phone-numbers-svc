@@ -31,10 +31,10 @@ public class CustomerControllerTest {
 
     private CustomerModel customerModelDummyObject;
     private int customerModelDummyId = 1;
-    private String customerModelDummyName = "Ahmed";
-    private String customerModelDummyPhone = "(212) 698054317";
+    private static String customerModelDummyName = "Ahmed";
+    private static String customerModelDummyPhone = "(212) 698054317";
     private boolean customerModelDummyStatus = true;
-    private String customerModelDummyCountry = Countries.MOROCCO.toString();
+    private static String customerModelDummyCountry = Countries.MOROCCO.toString();
 
     @Autowired
     private MockMvc mockMvc;

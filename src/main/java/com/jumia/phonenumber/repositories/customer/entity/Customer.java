@@ -15,6 +15,20 @@ public class Customer {
 
     private String phone;
 
+    public Customer() {
+    }
+
+    public Customer(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public Customer(int id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
+
     public int getId() {
         return id;
     }
