@@ -14,6 +14,12 @@ public class CustomerModel {
     public CustomerModel() {
     }
 
+    public CustomerModel(int id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
+
     public CustomerModel(int id, String name, String phone, String status, String country) {
         this.id = id;
         this.name = name;

@@ -16,6 +16,9 @@ import java.util.regex.Pattern;
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
+    private static String INVALID = "Invalid";
+    private static String VALID = "Valid";
+    private static String UNKNOWN = "Unknown";
 
     @Autowired
     public CustomerServiceImpl(CustomerRepository customerRepository) {
@@ -58,13 +61,16 @@ public class CustomerServiceImpl implements CustomerService {
         } else if (Pattern.matches(Patterns.UGANDA_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.UGANDA.toString());
             model.setStatus(this.getStatusStr(Pattern.matches(Patterns.UGANDA_NUMBER_REGEX, model.getPhone())));
+        }else{
+            model.setCountry(Countries.UNKNOWN.toString());
+            model.setStatus(UNKNOWN);
         }
     }
 
     private String getStatusStr(boolean flag) {
         if (flag)
-            return "Valid";
+            return VALID;
         else
-            return "Invalid";
+            return INVALID;
     }
 }
