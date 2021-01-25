@@ -33,7 +33,7 @@ public class CustomerControllerTest {
     private int customerModelDummyId = 1;
     private static String customerModelDummyName = "Ahmed";
     private static String customerModelDummyPhone = "(212) 698054317";
-    private boolean customerModelDummyStatus = true;
+    private static String customerModelDummyStatus = "Valid";
     private static String customerModelDummyCountry = Countries.MOROCCO.toString();
 
     @Autowired

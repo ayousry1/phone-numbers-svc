@@ -45,19 +45,26 @@ public class CustomerServiceImpl implements CustomerService {
     public void setCountryAndStatus(CustomerModel model) {
         if (Pattern.matches(Patterns.CAMEROON_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.CAMEROON.toString());
-            model.setStatus(Pattern.matches(Patterns.CAMEROON_NUMBER_REGEX, model.getPhone()));
+            model.setStatus(this.getStatusStr(Pattern.matches(Patterns.CAMEROON_NUMBER_REGEX, model.getPhone())));
         } else if (Pattern.matches(Patterns.ETHIOPIA_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.ETHIOPIA.toString());
-            model.setStatus(Pattern.matches(Patterns.ETHIOPIA_NUMBER_REGEX, model.getPhone()));
+            model.setStatus(this.getStatusStr(Pattern.matches(Patterns.ETHIOPIA_NUMBER_REGEX, model.getPhone())));
         } else if (Pattern.matches(Patterns.MOROCCO_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.MOROCCO.toString());
-            model.setStatus(Pattern.matches(Patterns.MOROCCO_NUMBER_REGEX, model.getPhone()));
+            model.setStatus(this.getStatusStr(Pattern.matches(Patterns.MOROCCO_NUMBER_REGEX, model.getPhone())));
         } else if (Pattern.matches(Patterns.MOZAMBIQUE_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.MOZAMBIQUE.toString());
-            model.setStatus(Pattern.matches(Patterns.MOZAMBIQUE_NUMBER_REGEX, model.getPhone()));
+            model.setStatus(this.getStatusStr(Pattern.matches(Patterns.MOZAMBIQUE_NUMBER_REGEX, model.getPhone())));
         } else if (Pattern.matches(Patterns.UGANDA_COUNTRY_CODE_REGEX, model.getPhone())) {
             model.setCountry(Countries.UGANDA.toString());
-            model.setStatus(Pattern.matches(Patterns.UGANDA_NUMBER_REGEX, model.getPhone()));
+            model.setStatus(this.getStatusStr(Pattern.matches(Patterns.UGANDA_NUMBER_REGEX, model.getPhone())));
         }
+    }
+
+    private String getStatusStr(boolean flag) {
+        if (flag)
+            return "Valid";
+        else
+            return "Invalid";
     }
 }

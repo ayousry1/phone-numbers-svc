@@ -7,14 +7,14 @@ public class CustomerModel {
 
     private String phone;
 
-    private boolean status;
+    private String status;
 
     private String Country;
 
     public CustomerModel() {
     }
 
-    public CustomerModel(int id, String name, String phone, boolean status, String country) {
+    public CustomerModel(int id, String name, String phone, String status, String country) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -46,11 +46,11 @@ public class CustomerModel {
         this.phone = phone;
     }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
